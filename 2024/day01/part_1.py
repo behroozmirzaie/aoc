@@ -6,6 +6,8 @@ def solution(locations):
     right = []
     locations = locations.split("\n")
     for line in locations: 
+        if not line:
+            break
         left_value,right_value = line.split()
         left.append(left_value)
         right.append(right_value)
@@ -18,4 +20,5 @@ def solution(locations):
     return result
 
 if __name__ == '__main__':
-    solution()
+    with open("input.txt") as f:
+        solution(f.read())
